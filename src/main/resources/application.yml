@@ -1,0 +1,19 @@
+server:
+  port: ${SERVER_PORT}
+  jwt:
+    jwtSecretKey: ${JWT_SECRET}
+    algorithm: HS256
+    issuer: ${JWT_ISSUER}
+    expiresIn: ${JWT_EXPIRATION}
+
+spring:
+  application:
+    name: hacker-news-connector
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}/${MONGO_DATABASE}?authSource=admin
+
+#Hacker news search by date URL
+external_api:
+  hacker_news:
+    search_by_date: https://hn.algolia.com/api/v1/search_by_date
